@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 
-extension UIColor {
+public extension UIColor {
     static let specialBackground = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     static let specialMagnolia = #colorLiteral(red: 0.9803921569, green: 0.968627451, blue: 0.9921568627, alpha: 1)
     static let specialNightRider = #colorLiteral(red: 0.1764705882, green: 0.1764705882, blue: 0.1764705882, alpha: 1)
@@ -11,19 +11,19 @@ extension UIColor {
     static let specialBoarderColor = UIColor(red: 0.96, green: 0.936, blue: 0.984, alpha: 1)
 }
 
-extension UIFont {
+public extension UIFont {
     
-//    Bold
+    //    Bold
     static func openSansBold28() -> UIFont? {
         return UIFont.init(name: "OpenSans-Bold", size: 28)
-}
-
-//    Light
+    }
+    
+    //    Light
     static func openSansLight16() -> UIFont? {
         return UIFont.init(name: "OpenSans-Light", size: 16)
-}
-
-//    SemiBold
+    }
+    
+    //    SemiBold
     static func openSansSemiBold13() -> UIFont? {
         return UIFont.init(name: "OpenSans-SemiBold", size: 13)
     }
@@ -37,7 +37,7 @@ extension UIFont {
     }
 }
 
-extension UIView {
+public extension UIView {
     func addShadowOnView() {
         layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
         layer.masksToBounds = false
@@ -47,7 +47,7 @@ extension UIView {
     }
 }
 
-extension UIButton {
+public extension UIButton {
     func setUpCustomButton() {
         titleLabel?.font = .openSansSemiBold13()
         setTitleColor(.black, for: .normal)

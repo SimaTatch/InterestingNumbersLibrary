@@ -1,13 +1,12 @@
 
-
 import Foundation
 
-class NetworkDataFetcher {
+public class NetworkDataFetcher {
     
     var networkService = NetworkService()
     
     //MARK: - fetch для чисел и дат
-    func fetchFacts(number: String, type: String, completion: @escaping (SearchResult?) -> ()) {
+    public func fetchFacts(number: String, type: String, completion: @escaping (SearchResult?) -> ()) {
         networkService.request(number: number, type: type) { data, error in
             if let error = error {
                 print("Error received requesting data: \(error.localizedDescription)")
@@ -21,7 +20,7 @@ class NetworkDataFetcher {
     }
     
     //MARK: - fetch для диапазонов и пар чисел
-    func fetchRange(number: String, type: String, completion: @escaping ([String: String]?) -> ()) {
+    public func fetchRange(number: String, type: String, completion: @escaping ([String: String]?) -> ()) {
         networkService.request(number: number, type: type) { data, error in
             if let error = error {
                 print("Error received requesting data: \(error.localizedDescription)")
@@ -33,7 +32,7 @@ class NetworkDataFetcher {
         }
     }
     
-    func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> SearchResult? {
+    public func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> SearchResult? {
         let decoder = JSONDecoder()
         guard let data = from else {return nil}
         do {
