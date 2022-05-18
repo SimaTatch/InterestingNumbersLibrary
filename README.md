@@ -1,3 +1,6 @@
 # InterestingNumbersLibrary
 
-A description of this package.
+## Installation 
+
+To install this package, install 'url here' in SPM.
+
